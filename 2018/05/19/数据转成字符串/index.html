@@ -9,14 +9,14 @@
   <title>数据转成字符串 | 我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="基础课件、 字符串：由0个或者多个字符组成的集合，并且放到一对单引号或者双引号或者反引号中。     属性：length               ———代表字符串的长度。    length属性只可以读取，不可以修改。 字符串一但创建不可以再修改 将其他数据类型转换成字符串的方法：    - String(要转换的数据)    - 要转换的数据.toString()        **&amp;gt;">
-<meta name="keywords" content="subject,allPages">
+<meta name="keywords" content="subject">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据转成字符串">
 <meta property="og:url" content="http://mengshu87.github.io/2018/05/19/数据转成字符串/index.html">
 <meta property="og:site_name" content="我的博客">
 <meta property="og:description" content="基础课件、 字符串：由0个或者多个字符组成的集合，并且放到一对单引号或者双引号或者反引号中。     属性：length               ———代表字符串的长度。    length属性只可以读取，不可以修改。 字符串一但创建不可以再修改 将其他数据类型转换成字符串的方法：    - String(要转换的数据)    - 要转换的数据.toString()        **&amp;gt;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-22T01:42:15.467Z">
+<meta property="og:updated_time" content="2018-05-22T01:47:04.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据转成字符串">
 <meta name="twitter:description" content="基础课件、 字符串：由0个或者多个字符组成的集合，并且放到一对单引号或者双引号或者反引号中。     属性：length               ———代表字符串的长度。    length属性只可以读取，不可以修改。 字符串一但创建不可以再修改 将其他数据类型转换成字符串的方法：    - String(要转换的数据)    - 要转换的数据.toString()        **&amp;gt;">
@@ -179,6 +179,30 @@
     
     <!-- 目录内容 -->
     
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+      <span class="btn-bg"></span>
+      <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+      <strong class="toc-title">文章目录</strong>
+      
+    </div>
+    <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+      };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+      };
+    </script>
+    
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
@@ -243,15 +267,22 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">subject</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">allPages</a>
-        		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/云服务器//" class="article-tag-list-link color5">云服务器</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -466,10 +497,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">subject</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">allPages</a>
               </li>
             
             <div class="clearfix"></div>
