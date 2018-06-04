@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://mengshu87.github.io">
-  <title>Archives | 我的博客</title>
+  <title>我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="valueOf title: valueOf()方法slug: “subject”comments: true #是否可评论tags:  subject   标签（空格分隔）： 未分类在类型转换中，经常用到方法valueOf()和toString()，所有对象（包括基本包装类型）都拥有这两个方法。这篇文章我们先看看valueOf()方法。valueOf()方法会将对象转换为基本类型，如果无法转换为">
+<meta property="og:type" content="article">
 <meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://mengshu87.github.io/archives/index.html">
+<meta property="og:url" content="http://mengshu87.github.io/2018/06/04/valueOf()方法/index.html">
 <meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="valueOf title: valueOf()方法slug: “subject”comments: true #是否可评论tags:  subject   标签（空格分隔）： 未分类在类型转换中，经常用到方法valueOf()和toString()，所有对象（包括基本包装类型）都拥有这两个方法。这篇文章我们先看看valueOf()方法。valueOf()方法会将对象转换为基本类型，如果无法转换为">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-04T12:02:20.569Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的博客">
+<meta name="twitter:description" content="valueOf title: valueOf()方法slug: “subject”comments: true #是否可评论tags:  subject   标签（空格分隔）： 未分类在类型转换中，经常用到方法valueOf()和toString()，所有对象（包括基本包装类型）都拥有这两个方法。这篇文章我们先看看valueOf()方法。valueOf()方法会将对象转换为基本类型，如果无法转换为">
   
     <link rel="alternative" href="/atom.xml" title="我的博客" type="application/atom+xml">
   
@@ -154,173 +158,174 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-valueOf()方法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+    <!-- 目录内容 -->
     
+    <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="valueOf-NaN"><a href="#valueOf-NaN" class="headerlink" title="valueOf"></a>valueOf</h1><hr>
+<p>title: valueOf()方法<br>slug: “subject”<br>comments: true #是否可评论<br>tags:</p>
+<ul>
+<li>subject</li>
+</ul>
+<hr>
+<p>标签（空格分隔）： 未分类<br>在类型转换中，经常用到方法valueOf()和toString()，所有对象（包括基本包装类型）都拥有这两个方法。这篇文章我们先看看valueOf()方法。valueOf()方法会将对象转换为基本类型，如果无法转换为基本类型，则返回原对象。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">【1】基本包装类型——Boolean型</span><br><span class="line">var obj = new Boolean(true);</span><br><span class="line">console.log(obj.valueOf());//true</span><br><span class="line">console.log(typeof obj.valueOf());//boolean</span><br><span class="line">//如果是包装类型的基本类型，则返回原基本类型值</span><br><span class="line">var a = true;</span><br><span class="line">console.log(a.valueOf());//true</span><br><span class="line">console.log(typeof a.valueOf());//boolean</span><br></pre></td></tr></table></figure></p>
+<p>如果是基本包装类型对应的基本类型，会返回原值。但这并不代表基本类型拥有valueOf()方法（基本类型不是对象，不拥有任何方法），而是在读取一个基本类型值时，后台会创建一个对应的基本包装类型的对象，从而调用一些方法。所以，基本类型“调用”valueOf()方法时，实际上是先创建了一个对应的基本包装类型，由此基本包装类型调用valueOf()，最后返回了其对应的基本类型，看起来就好像是基本类型调用了valueOf()方法而得到了原始值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">【2】基本包装类型——String型</span><br><span class="line">var obj = new String(&quot;hello&quot;);</span><br><span class="line">console.log(obj.valueOf());//hello</span><br><span class="line">console.log(typeof obj.valueOf());//string</span><br><span class="line">//如果是包装类型的基本类型，则返回原基本类型值</span><br><span class="line">var a = &quot;hello&quot;;</span><br><span class="line">console.log(a.valueOf());//hello</span><br><span class="line">console.log(typeof a.valueOf());//string</span><br></pre></td></tr></table></figure>
+<p>同【1】，String基本包装类型和基本类型调用valueOf()方法都返回对应的基本类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">【3】基本包装类型——Number型</span><br><span class="line">var obj = new Number(&quot;123&quot;);</span><br><span class="line">console.log(obj.valueOf());//123</span><br><span class="line">console.log(typeof obj.valueOf());//number</span><br><span class="line">//如果是包装类型的基本类型，则返回原基本类型值</span><br><span class="line">var a = 123;</span><br><span class="line">console.log(a.valueOf());//123</span><br><span class="line">console.log(typeof a.valueOf());//number</span><br></pre></td></tr></table></figure></p>
+<p>同【1】，Number基本包装类型和基本类型调用valueOf()方法都返回对应的基本类型。</p>
+<p>注意，如果直接用整数调用时，要加上括号，否则会报错。因为整数后面的点会识别为小数点。浮点型不会报错。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(123.valueOf());//Uncaught SyntaxError</span><br><span class="line">console.log((123).valueOf());//123</span><br><span class="line">console.log(12.3.valueOf());//12.3</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">【4】数组Array类型（返回原数组）</span><br><span class="line">var a = [1];</span><br><span class="line">console.log(a.valueOf());//[1]</span><br><span class="line">console.log(a === a.valueOf());//true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">【5】函数Function类型（返回原函数）</span><br><span class="line">var a = function()&#123;&#125;;</span><br><span class="line">console.log(a.valueOf());//function()&#123;&#125;;</span><br><span class="line">console.log(a === a.valueOf());//true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">【6】正则RegExp类型（返回原正则对象）</span><br><span class="line">var a = /a/g;</span><br><span class="line">console.log(a.valueOf());///a/g</span><br><span class="line">console.log(a === a.valueOf());//true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">【7】对象Object类型</span><br><span class="line"></span><br><span class="line">var obj = &#123;a:1&#125;;</span><br><span class="line">console.log(obj.valueOf());//Object&#123;a:1&#125;</span><br><span class="line">console.log(obj === obj.valueOf());//true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">【8】Date类型（返回表示当前时间的数值）</span><br><span class="line">var obj = new Date();</span><br><span class="line">console.log(obj);//Wed May 10 2017 12:19:05 GMT+0800 (中国标准时间)</span><br><span class="line">console.log(obj.valueOf());//1494389910179</span><br><span class="line">console.log(obj === obj.valueOf());//false</span><br><span class="line">console.log(obj.getTime() === obj.valueOf());//true</span><br></pre></td></tr></table></figure>
+<p>小结：<br>1）undefined和null没有此方法（基本类型肯定没有方法，String、Number和Boolean是因为有对应的基本包装类型，才可以调用方法）;<br>2）基本包装类型和对应的基本类型，调用valueOf()返回对应的基本类型值;<br>3）对象类型（除Date类型）返回原对象;<br>4）Date类型返回表示日期的毫秒数;</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/04/valueOf()方法/" class="archive-article-date">
-  	<time datetime="2018-06-04T12:01:29.363Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-04</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://mengshu87.github.io/2018/06/04/valueOf()方法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/04/toString()方法/" class="archive-article-date">
-  	<time datetime="2018-06-04T11:57:40.354Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/04/toString()方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">toString()方法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/04/toString()方法/">toString()方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">subject</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#valueOf-NaN"><span class="toc-number">1.</span> <span class="toc-text">valueOf</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/22/suibi/" class="archive-article-date">
-  	<time datetime="2018-05-22T02:01:38.754Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/22/suibi/">随笔</a>
-    </h1>
+        
+    </div>
+</aside>
+
+
+
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/19/数据转成字符串/" class="archive-article-date">
-  	<time datetime="2018-05-19T07:49:06.784Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/19/数据转成字符串/">数据转成字符串</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">subject</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/18/hello-world/" class="archive-article-date">
-  	<time datetime="2018-05-18T10:29:01.235Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/18/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -343,8 +348,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
