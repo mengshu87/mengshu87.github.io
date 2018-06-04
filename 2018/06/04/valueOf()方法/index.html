@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://mengshu87.github.io">
   <title>valueOf()方法 | 我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="标签（空格分隔）： 未分类在类型转换中，经常用到方法valueOf()和toString()，所有对象（包括基本包装类型）都拥有这两个方法。这篇文章我们先看看valueOf()方法。valueOf()方法会将对象转换为基本类型，如果无法转换为基本类型，则返回原对象。">
+  <meta name="description" content="在类型转换中，经常用到方法valueOf()和toString()，所有对象（包括基本包装类型）都拥有这两个方法。这篇文章我们先看看valueOf()方法。valueOf()方法会将对象转换为基本类型，如果无法转换为基本类型，则返回原对象。">
 <meta name="keywords" content="subject">
 <meta property="og:type" content="article">
 <meta property="og:title" content="valueOf()方法">
 <meta property="og:url" content="http://mengshu87.github.io/2018/06/04/valueOf()方法/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="标签（空格分隔）： 未分类在类型转换中，经常用到方法valueOf()和toString()，所有对象（包括基本包装类型）都拥有这两个方法。这篇文章我们先看看valueOf()方法。valueOf()方法会将对象转换为基本类型，如果无法转换为基本类型，则返回原对象。">
+<meta property="og:description" content="在类型转换中，经常用到方法valueOf()和toString()，所有对象（包括基本包装类型）都拥有这两个方法。这篇文章我们先看看valueOf()方法。valueOf()方法会将对象转换为基本类型，如果无法转换为基本类型，则返回原对象。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-04T12:03:52.534Z">
+<meta property="og:updated_time" content="2018-06-04T12:05:44.309Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="valueOf()方法">
-<meta name="twitter:description" content="标签（空格分隔）： 未分类在类型转换中，经常用到方法valueOf()和toString()，所有对象（包括基本包装类型）都拥有这两个方法。这篇文章我们先看看valueOf()方法。valueOf()方法会将对象转换为基本类型，如果无法转换为基本类型，则返回原对象。">
+<meta name="twitter:description" content="在类型转换中，经常用到方法valueOf()和toString()，所有对象（包括基本包装类型）都拥有这两个方法。这篇文章我们先看看valueOf()方法。valueOf()方法会将对象转换为基本类型，如果无法转换为基本类型，则返回原对象。">
   
     <link rel="alternative" href="/atom.xml" title="我的博客" type="application/atom+xml">
   
@@ -182,7 +182,7 @@
     <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>标签（空格分隔）： 未分类<br>在类型转换中，经常用到方法valueOf()和toString()，所有对象（包括基本包装类型）都拥有这两个方法。这篇文章我们先看看valueOf()方法。valueOf()方法会将对象转换为基本类型，如果无法转换为基本类型，则返回原对象。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">【1】基本包装类型——Boolean型</span><br><span class="line">var obj = new Boolean(true);</span><br><span class="line">console.log(obj.valueOf());//true</span><br><span class="line">console.log(typeof obj.valueOf());//boolean</span><br><span class="line">//如果是包装类型的基本类型，则返回原基本类型值</span><br><span class="line">var a = true;</span><br><span class="line">console.log(a.valueOf());//true</span><br><span class="line">console.log(typeof a.valueOf());//boolean</span><br></pre></td></tr></table></figure></p>
+        <p>在类型转换中，经常用到方法valueOf()和toString()，所有对象（包括基本包装类型）都拥有这两个方法。这篇文章我们先看看valueOf()方法。valueOf()方法会将对象转换为基本类型，如果无法转换为基本类型，则返回原对象。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">【1】基本包装类型——Boolean型</span><br><span class="line">var obj = new Boolean(true);</span><br><span class="line">console.log(obj.valueOf());//true</span><br><span class="line">console.log(typeof obj.valueOf());//boolean</span><br><span class="line">//如果是包装类型的基本类型，则返回原基本类型值</span><br><span class="line">var a = true;</span><br><span class="line">console.log(a.valueOf());//true</span><br><span class="line">console.log(typeof a.valueOf());//boolean</span><br></pre></td></tr></table></figure></p>
 <p>如果是基本包装类型对应的基本类型，会返回原值。但这并不代表基本类型拥有valueOf()方法（基本类型不是对象，不拥有任何方法），而是在读取一个基本类型值时，后台会创建一个对应的基本包装类型的对象，从而调用一些方法。所以，基本类型“调用”valueOf()方法时，实际上是先创建了一个对应的基本包装类型，由此基本包装类型调用valueOf()，最后返回了其对应的基本类型，看起来就好像是基本类型调用了valueOf()方法而得到了原始值。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">【2】基本包装类型——String型</span><br><span class="line">var obj = new String(&quot;hello&quot;);</span><br><span class="line">console.log(obj.valueOf());//hello</span><br><span class="line">console.log(typeof obj.valueOf());//string</span><br><span class="line">//如果是包装类型的基本类型，则返回原基本类型值</span><br><span class="line">var a = &quot;hello&quot;;</span><br><span class="line">console.log(a.valueOf());//hello</span><br><span class="line">console.log(typeof a.valueOf());//string</span><br></pre></td></tr></table></figure>
 <p>同【1】，String基本包装类型和基本类型调用valueOf()方法都返回对应的基本类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">【3】基本包装类型——Number型</span><br><span class="line">var obj = new Number(&quot;123&quot;);</span><br><span class="line">console.log(obj.valueOf());//123</span><br><span class="line">console.log(typeof obj.valueOf());//number</span><br><span class="line">//如果是包装类型的基本类型，则返回原基本类型值</span><br><span class="line">var a = 123;</span><br><span class="line">console.log(a.valueOf());//123</span><br><span class="line">console.log(typeof a.valueOf());//number</span><br></pre></td></tr></table></figure></p>
